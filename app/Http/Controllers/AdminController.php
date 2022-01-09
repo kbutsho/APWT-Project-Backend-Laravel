@@ -190,6 +190,10 @@ class AdminController extends Controller
 
 
 
+
+    
+    // API Start
+
     // set Admin photo
     public function AdminImageAPI(Request $request)
     {
@@ -207,8 +211,6 @@ class AdminController extends Controller
         $user = Admin::find($id);
         return $user;
     }
-
-
     // seller operation
     public function AddSellerAPi(Request $request)
     {

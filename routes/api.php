@@ -29,8 +29,6 @@ Route::post('/login',[LoginController::class,'login']);
 Route::post('/logout',[LoginController::class,'loggedOut']);
 Route::post('/registration',[RegistrationController::class,'Registration']);
 Route::get('/products',[ProductController::class,'ProductsApi']);
-
-
 // admin  area start
 Route::post('/adminPhoto',[AdminController::class,'AdminImageAPI']);
 Route::get('/adminInfo/{id}',[AdminController::class,'GetAdminInfoAPI']);
@@ -44,9 +42,6 @@ Route::get('/getSeller/{id}',[AdminController::class,'GetSeller']);
 Route::delete('/deleteSeller/{id}',[AdminController::class,'deleteSeller']);
 Route::post('/updateSeller',[AdminController::class,'UpdateSellerAPi']);
 Route::get('/orderListForAdmin',[AdminController::class,'orderListForAdmin']);
-
-
-
 // customer operation fro admin
 Route::post('/addCustomer',[AdminController::class,'AddCustomerAPi']);
 Route::get('/customerList',[AdminController::class,'customerList']);
@@ -64,6 +59,11 @@ Route::post('/updateServiceProvider',[AdminController::class,'UpdateServiceProvi
 // admin area end
 
 
+
+
+
+
+
 //  seller area start
 Route::get('/sellerDashboard',[SellerController::class,'sellerDashboard'])->middleware([validToken::class]);
 Route::post('/updateSellerProfile',[SellerController::class,'updateSellerProfileAPI']);
@@ -78,8 +78,27 @@ Route::get('/sellerOrders/{id}',[SellerController::class,'SellerOrdersAPI']);
 Route::delete('/deleteSellerOrder/{id}',[SellerController::class,'deleteSellerOrderAPI']);
 Route::post('/updateSellerOrderAPI',[SellerController::class,'updateSellerOrderAPI']);
 Route::get('/productRatingsAPI/{id}',[SellerController::class,'productRatingsAPI']);
-
 // seller area end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // customer area start

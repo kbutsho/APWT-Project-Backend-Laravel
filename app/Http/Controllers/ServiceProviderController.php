@@ -413,7 +413,7 @@ class ServiceProviderController extends Controller
 
 
 
-    //api
+    //api 
     // service provider image
     public function ServiceProviderImageAPI(Request $request)
     {
@@ -549,8 +549,8 @@ class ServiceProviderController extends Controller
     //delete note
     function deleteNoteAPI($id)
     {
-        $order = Service::find($id);
-        $order->delete();
+        $note = Service::find($id);
+        $note->delete();
         return response()->json([
             'status' => 'success',
             'message' => 'Delete Successfully!',

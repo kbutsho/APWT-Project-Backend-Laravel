@@ -418,7 +418,7 @@ class CustomerController extends Controller
 
 
 
-    // api
+    // api 
     public function GetSingleProductAPI($id)
     {
         $var = Product::find($id);

@@ -149,14 +149,6 @@ class RegistrationController extends Controller
         }
     }
     
-
-
-
-
-
-
-
-
     // API
     public function Registration(Request $request)
     {

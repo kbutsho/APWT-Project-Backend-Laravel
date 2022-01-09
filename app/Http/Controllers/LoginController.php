@@ -182,7 +182,6 @@ class LoginController extends Controller
     // Login API
     public function  login(Request $request)
     {
-
         $validator = Validator::make(
             $request->all(),
             [
@@ -235,7 +234,7 @@ class LoginController extends Controller
                         $token->userId = $user->id;
                         $token->created_at = new DateTime();
                         $token->save();
-
+                        
                         return response()->json([
                             'status' => 'success',
                             'message' => 'Login Successfully',
