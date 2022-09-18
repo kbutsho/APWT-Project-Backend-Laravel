@@ -165,11 +165,11 @@ class ProductController extends Controller
         $product->productDetails = $request->productDetails;
 
         if ($request->hasFile('image')) {
-            $destination = 'uploads/products/' . $product->image;
+            //$destination = 'uploads/products/' . $product->image;
 
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
+            // if (File::exists($destination)) {
+            //     File::delete($destination);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
@@ -184,10 +184,10 @@ class ProductController extends Controller
     function deleteProduct(Request $request)
     {
         $product = Product::where('id', $request->id)->first();
-        $destination = 'uploads/products/' . $product->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = '~uploads/products/' . $product->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $product->delete();
         $request->session()->flash('product-delete', 'Product Deleted Successfully!');
         return redirect('productList');

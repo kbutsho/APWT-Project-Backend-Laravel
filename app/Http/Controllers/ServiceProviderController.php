@@ -161,10 +161,10 @@ class ServiceProviderController extends Controller
         $var->status = $request->status;
 
         if ($request->hasFile('image')) {
-            $destination = 'uploads/serviceProviderProfile/' . $var->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
+            // $destination = 'uploads/serviceProviderProfile/' . $var->image;
+            // if (File::exists($destination)) {
+            //     File::delete($destination);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
@@ -286,10 +286,10 @@ class ServiceProviderController extends Controller
     function deleteServiceProvider(Request $request)
     {
         $product = ServiceProvider::where('id', $request->id)->first();
-        $destination = 'uploads/serviceProviderProfile/' . $product->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/serviceProviderProfile/' . $product->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $product->delete();
         $request->session()->flash('serviceProvider-delete', 'Service Provider Deleted Successfully!');
         return redirect('serviceProviderList');
@@ -298,10 +298,10 @@ class ServiceProviderController extends Controller
     function deleteServiceProviderAccount(Request $request)
     {
         $ServiceProvider = ServiceProvider::where('id', $request->id)->first();
-        $destination = 'uploads/serviceProviderProfile/' . $ServiceProvider->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/serviceProviderProfile/' . $ServiceProvider->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $ServiceProvider->delete();
         session()->flush();
         return redirect('/');

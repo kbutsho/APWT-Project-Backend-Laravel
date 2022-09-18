@@ -160,10 +160,10 @@ class AdminController extends Controller
         $var->status = $request->status;
 
         if ($request->hasFile('image')) {
-            $destination = 'uploads/adminProfile/' . $var->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
+            // $destination = 'uploads/adminProfile/' . $var->image;
+            // if (File::exists($destination)) {
+            //     File::delete($destination);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
@@ -178,10 +178,10 @@ class AdminController extends Controller
     function deleteAdminAccount(Request $request)
     {
         $admin = Admin::where('id', $request->id)->first();
-        $destination = 'uploads/adminProfile/' . $admin->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/adminProfile/' . $admin->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $admin->delete();
         session()->flush();
         return redirect('/');
@@ -341,7 +341,7 @@ class AdminController extends Controller
             $var->password = $request->password;
             $var->status = $request->status;
             $var->update();
-            return redirect('http://localhost:3000/sellerList');
+            return redirect('http://react-laravel-ecommerce.kbutsho.com/sellerList');
         }
     }
 
@@ -481,7 +481,7 @@ class AdminController extends Controller
             $var->password = $request->password;
             $var->status = $request->status;
             $var->update();
-            return redirect('http://localhost:3000/customerList');
+            return redirect('http://react-laravel-ecommerce.kbutsho.com/customerList');
         }
     }
 
@@ -619,7 +619,7 @@ class AdminController extends Controller
             $var->password = $request->password;
             $var->status = $request->status;
             $var->update();
-            return redirect('http://localhost:3000/serviceProviderList');
+            return redirect('http://react-laravel-ecommerce.kbutsho.com/serviceProviderList');
         }
     }
     // get all orders api
@@ -665,6 +665,6 @@ class AdminController extends Controller
         $var->address = $request->address;
         $var->password = $request->password;
         $var->update();
-        return redirect('http://localhost:3000/dashboard');
+        return redirect('http://react-laravel-ecommerce.kbutsho.com/dashboard');
     }
 }

@@ -164,10 +164,10 @@ class CustomerController extends Controller
         $var->status = $request->status;
 
         if ($request->hasFile('image')) {
-            $destination = 'uploads/customerProfile/' . $var->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
+            // $destination = 'uploads/customerProfile/' . $var->image;
+            // if (File::exists($destination)) {
+            //     File::delete($destination);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
@@ -296,10 +296,10 @@ class CustomerController extends Controller
     function deleteCustomer(Request $request)
     {
         $customer = Customer::where('id', $request->id)->first();
-        $destination = 'uploads/customerProfile/' . $customer->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/customerProfile/' . $customer->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $customer->delete();
         $request->session()->flash('customer-delete', 'Customer Deleted Successfully!');
         return redirect('customerList');

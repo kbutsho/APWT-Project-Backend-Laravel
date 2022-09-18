@@ -57,10 +57,10 @@
                     style="border:2px solid red;">
                     <h5 class="fw-bold" style="color: rgb(59, 253, 0); font-weight: bold">
                         <span>
-                            << /span>
+                            
                     </h5>
                     <h5 class="fw-bold">E-SHOP</h5>
-                    <h5 class="fw-bold" style="color: rgb(59, 253, 0); font-weight: bold"><span>/></span></h5>
+                    <h5 class="fw-bold" style="color: rgb(59, 253, 0); font-weight: bold"><span></span></h5>
                 </div>
                 <div class="navbar-nav ms-auto text-uppercase">
                     <a class="fw-bold nav-link mx-2 text-white" href="{{ route ('/') }}">Home</a>

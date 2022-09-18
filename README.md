@@ -1,3 +1,3 @@
 ### APWT Backend Laravel Project
-#### Backend Live: http://react-laravel.kbutsho.com
-#### Frontend Live: https://react-laravel-ecommerce.netlify.app
+#### Backend Live with api:
+https://laravel-ecommerce.kbutsho.com

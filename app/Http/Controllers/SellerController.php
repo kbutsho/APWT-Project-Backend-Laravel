@@ -112,10 +112,10 @@ class SellerController extends Controller
     function deleteSeller(Request $request)
     {
         $product = Seller::where('id', $request->id)->first();
-        $destination = 'uploads/sellerProfile/' . $product->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/sellerProfile/' . $product->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $product->delete();
         $request->session()->flash('seller-delete', 'Seller Deleted Successfully!');
         return redirect('sellerList');
@@ -232,10 +232,10 @@ class SellerController extends Controller
     function deleteSellerAccount(Request $request)
     {
         $seller = Seller::where('id', $request->id)->first();
-        $destination = 'uploads/sellerProfile/' . $seller->image;
-        if (File::exists($destination)) {
-            File::delete($destination);
-        }
+        // $destination = 'uploads/sellerProfile/' . $seller->image;
+        // if (File::exists($destination)) {
+        //     File::delete($destination);
+        // }
         $seller->delete();
         session()->flush();
         return redirect('/');
@@ -383,9 +383,9 @@ class SellerController extends Controller
         if ($request->hasFile('image')) {
 
             $destination = 'uploads/sellerProfile/' . $var->image;
-            if (File::exists($destination)) {
-                File::delete($destination);
-            }
+            // if (File::exists($destination)) {
+            //     File::delete($destination);
+            // }
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $fileName = time() . '.' . $extension;
